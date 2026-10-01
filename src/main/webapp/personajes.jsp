@@ -56,25 +56,29 @@
 
 <p class="resumen"><strong>${personajes.size()}</strong> personajes encontrados</p>
 
-<table>
-  <thead>
-  <tr>
-    <th>Nombre</th>
-    <th>Edad</th>
-    <th>Ocupación</th>
-    <th>Lugar</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  </c:forEach>
-  </tbody>
-</table>
+<c:if test="${not empty personajes}">
+  <table>
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Ocupación</th>
+      <th>Lugar</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <c:forEach var="personaje" items="${personajes}">
+      <tr>
+        <td>${personaje.nombreCompleto()}</td>
+        <td>${personaje.edad()}</td>
+        <td>${personaje.ocupacion()}</td>
+        <td>${personaje.lugar()}</td>
+      </tr>
+    </c:forEach>
+
+    </tbody>
+  </table>
 </c:if>
 
 </body>

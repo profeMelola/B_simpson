@@ -31,14 +31,21 @@ public class PersonajeServlet extends HttpServlet {
         // 1. LEER LOS PARÁMETROS DEL REQUEST
         // PENDIENTE!!!
         String lugar = request.getParameter("lugar");
+        System.out.println("**** lugar: " + lugar);
         String edadMax = request.getParameter("edadMax"); // cuidadín!!! llega como un String pero la edad la trato como un int
+        System.out.println("**** edadMax: " + edadMax);
 
-        Integer edadMin = Integer.valueOf(request.getParameter("edadMin"));
-        int edadMin2 = Integer.parseInt(request.getParameter("edadMin"));
+        // pendiente!!!! si hay error al convertir que mande un mensaje de error a personajes.jsp
+//        Integer edadMin = Integer.valueOf(request.getParameter("edadMin"));
+        int edadMin = Integer.parseInt(request.getParameter("edadMin"));
+
+        //String edadMin = request.getParameter("edadMin");
+        System.out.println("**** edadMin: " + edadMin);
 
         // continuará...
         //boolean descendente = Boolean.parseBoolean(request.getParameter("descendente"));
         boolean descendente = request.getParameter("descendente") != null; // si no está marcado no se envía!!!
+        System.out.println("**** descendente: " + descendente);
 
 
 
