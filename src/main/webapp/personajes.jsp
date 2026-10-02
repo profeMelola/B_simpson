@@ -25,7 +25,7 @@
     </label>
 
     <label>Edad máxima
-      <input type="number" name="edadMax" min="0" value="">
+      <input type="number" name="edadMax" min="0" value="200">
     </label>
   </fieldset>
 
@@ -46,7 +46,7 @@
     </label>
 
     <label>Mostrar como máximo
-      <input type="number" name="limite" min="0" value="">
+      <input type="number" name="limite" min="0" value="100">
     </label>
   </fieldset>
 
@@ -55,6 +55,11 @@
 </form>
 
 <p class="resumen"><strong>${personajes.size()}</strong> personajes encontrados</p>
+
+<!-- si hay error se pinta -->
+<c:if test="${not empty error}">
+  <p class="error">${error}</p>
+</c:if>
 
 <c:if test="${not empty personajes}">
   <table>
